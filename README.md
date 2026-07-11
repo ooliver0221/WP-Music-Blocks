@@ -1,4 +1,4 @@
-# WP Music Blocks
+# WP-Music-Blocks
 
 一个 WordPress 区块插件，在文章中插入美观的音乐卡片。粘贴 Apple Music、QQ音乐 或 网易云音乐 的链接，自动生成带有专辑封面、渐变背景的展示卡片。
 

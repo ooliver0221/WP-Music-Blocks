@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Music Blocks
+ * Plugin Name: WP-Music-Blocks
  * Plugin URI: https://github.com/ooliver0221/wp-music-blocks
  * Description: 一个 Gutenberg 音乐卡片区块，支持 Apple Music、QQ音乐、网易云音乐。粘贴链接即可自动获取专辑封面、歌曲信息和曲目列表。
  * Version: 1.0.0
@@ -120,7 +120,7 @@ add_action('admin_init', 'wpmb_register_settings');
  */
 function wpmb_add_settings_page() {
     add_options_page(
-        'WP Music Blocks 设置',
+        'WP-Music-Blocks 设置',
         'Music Blocks',
         'manage_options',
         'wpmb_settings',
@@ -135,7 +135,7 @@ add_action('admin_menu', 'wpmb_add_settings_page');
 function wpmb_render_settings_page() {
     ?>
     <div class="wrap">
-        <h1>WP Music Blocks 设置</h1>
+        <h1>WP-Music-Blocks 设置</h1>
         <form method="post" action="options.php">
             <?php
             settings_fields('wpmb_settings');

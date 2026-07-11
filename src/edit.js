@@ -1,5 +1,5 @@
 /**
- * WP Music Blocks - Editor Component
+ * WP-Music-Blocks - Editor Component
  */
 import { useState, useEffect, useCallback } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -65,7 +65,7 @@ export default function Edit({ attributes, setAttributes }) {
                 setAttributes({ cardType: detected });
 
                 if (res.diagnostic) {
-                    console.log('WP Music Blocks diagnostic:', JSON.stringify(res.diagnostic));
+                    console.log('WP-Music-Blocks diagnostic:', JSON.stringify(res.diagnostic));
                 }
                 if (!dt.title && res.diagnostic && res.diagnostic.hint) {
                     setError(res.diagnostic.hint);

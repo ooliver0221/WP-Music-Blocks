@@ -1,5 +1,5 @@
 /**
- * WP Music Blocks - Music Card Preview Component
+ * WP-Music-Blocks - Music Card Preview Component
  * Single: horizontal (left cover, right info)
  * Album: vertical (cover top, info + tracklist below)
  */

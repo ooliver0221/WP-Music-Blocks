@@ -1,5 +1,5 @@
 /**
- * WP Music Blocks - Block Editor Script
+ * WP-Music-Blocks - Block Editor Script
  * Horizontal card (single), vertical card (album), color extraction
  */
 (function (wp) {
@@ -182,7 +182,7 @@
                     setAttributes({ cardType: detected });
 
                     if (res.diagnostic) {
-                        console.log('WP Music Blocks diagnostic:', JSON.stringify(res.diagnostic));
+                        console.log('WP-Music-Blocks diagnostic:', JSON.stringify(res.diagnostic));
                     }
                     if (!dt.title && res.diagnostic && res.diagnostic.hint) {
                         setError(res.diagnostic.hint);

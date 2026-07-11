@@ -1,6 +1,6 @@
 <?php
 /**
- * REST API endpoints for WP Music Blocks.
+ * REST API endpoints for WP-Music-Blocks.
  *
  * @package WPMusicBlocks
  */

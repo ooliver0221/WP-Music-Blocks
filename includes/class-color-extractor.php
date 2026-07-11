@@ -198,7 +198,7 @@ class Color_Extractor {
         $response = wp_remote_get($url, [
             'timeout'    => 20,
             'sslverify'  => false,
-            'user-agent' => 'Mozilla/5.0 (compatible; WP Music Blocks)',
+            'user-agent' => 'Mozilla/5.0 (compatible; WP-Music-Blocks)',
         ]);
         if (is_wp_error($response)) {
             self::$last_error = 'HTTP error: ' . $response->get_error_message();

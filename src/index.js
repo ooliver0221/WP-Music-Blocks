@@ -1,5 +1,5 @@
 /**
- * WP Music Blocks - Block Registration
+ * WP-Music-Blocks - Block Registration
  */
 import { registerBlockType } from '@wordpress/blocks';
 import Edit from './edit';
