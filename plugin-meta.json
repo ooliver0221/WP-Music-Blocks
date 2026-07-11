@@ -1,0 +1,8 @@
+{
+    "name": "WP Music Blocks",
+    "version": "1.0.0",
+    "author": "ooliver",
+    "plugin_uri": "https://github.com/ooliver0221/wp-music-blocks",
+    "description": "一个 Gutenberg 音乐卡片区块，支持 Apple Music、QQ音乐、网易云音乐。粘贴链接即可自动获取专辑封面、歌曲信息和曲目列表。",
+    "text_domain": "wp-music-blocks"
+}

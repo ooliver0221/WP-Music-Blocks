@@ -1,0 +1,264 @@
+/**
+ * WP Music Blocks - Frontend Card Styles
+ * Single: horizontal (left cover, right info)
+ * Album: vertical (cover top, info + tracklist below)
+ */
+
+.wpmb-card {
+    --wpmb-accent: #6366f1;
+    --wpmb-main-color: #2d1060;
+    --wpmb-bg-image: radial-gradient(ellipse 95% 85% at 5% 8%, rgba(139,92,246,0.28) 0%, transparent 70%), radial-gradient(ellipse 85% 80% at 75% 25%, rgba(99,102,241,0.22) 0%, transparent 70%), radial-gradient(ellipse 90% 75% at 35% 65%, rgba(167,139,250,0.24) 0%, transparent 70%), radial-gradient(ellipse 80% 70% at 70% 75%, rgba(236,72,153,0.18) 0%, transparent 70%), radial-gradient(ellipse 75% 65% at 50% 50%, rgba(192,132,252,0.14) 0%, transparent 70%), linear-gradient(140deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 25%, transparent 50%, rgba(0,0,0,0.05) 75%, rgba(0,0,0,0.12) 100%);
+    --wpmb-text-color: #ffffff;
+    --wpmb-font: inherit;
+    --wpmb-radius: 12px;
+
+    max-width: 420px;
+    width: 100%;
+    margin-block: 1.5rem;
+    margin-inline: 0;
+    border-radius: var(--wpmb-radius);
+    background-color: var(--wpmb-main-color);
+    background-image: var(--wpmb-bg-image);
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    font-family: var(--wpmb-font);
+    position: relative;
+}
+
+/* Ambient light reflection */
+.wpmb-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--wpmb-radius);
+    background: linear-gradient(155deg, rgba(255,255,255,0.07) 0%, transparent 35%, transparent 60%, rgba(0,0,0,0.04) 80%, rgba(0,0,0,0.10) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.wpmb-card:hover {
+    transform: translateY(-2px);
+}
+
+/* ── Card inner link ── */
+.wpmb-card > .wpmb-card-inner,
+.wpmb-card > a.wpmb-card-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    text-decoration: none;
+    color: var(--wpmb-text-color);
+    gap: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Album: cover + info side by side, tracklist below ── */
+.wpmb-card--album {
+    max-width: 440px;
+}
+
+.wpmb-card.wpmb-card--album > .wpmb-card-inner,
+.wpmb-card.wpmb-card--album > a.wpmb-card-inner {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.wpmb-card.wpmb-card--album .wpmb-card-main {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+/* ── Cover ── */
+.wpmb-card-cover {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    margin: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wpmb-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.wpmb-cover-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wpmb-text-color);
+    opacity: 0.3;
+}
+
+/* ── Body ── */
+.wpmb-card-body {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 12px 12px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Album body: slightly different padding */
+.wpmb-card--album .wpmb-card-body {
+    padding: 12px 16px 8px;
+}
+
+.wpmb-card-title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--wpmb-text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wpmb-card--album .wpmb-card-title {
+    font-size: 1.05rem;
+}
+
+.wpmb-card-artist {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--wpmb-text-color);
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wpmb-card-album {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--wpmb-text-color);
+    opacity: 0.65;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Meta ── */
+.wpmb-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.wpmb-meta-text {
+    font-size: 0.7rem;
+    color: var(--wpmb-text-color);
+    opacity: 0.6;
+}
+
+.wpmb-meta-text::before {
+    content: '\00B7';
+    margin-right: 6px;
+}
+
+.wpmb-meta-platform {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--wpmb-text-color);
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+/* ── Tracklist (album) ── */
+.wpmb-tracklist {
+    margin: 0;
+    padding: 8px 16px 12px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.wpmb-tracks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wpmb-track-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 6px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+}
+
+.wpmb-track-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.wpmb-track-num {
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--wpmb-text-color);
+    opacity: 0.4;
+    font-weight: 500;
+}
+
+.wpmb-track-info {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wpmb-track-title {
+    color: var(--wpmb-text-color);
+    font-weight: 500;
+}
+
+.wpmb-track-artist {
+    color: var(--wpmb-text-color);
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+.wpmb-track-time {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+    color: var(--wpmb-text-color);
+    opacity: 0.4;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Responsive ── */
+@media (max-width: 440px) {
+    .wpmb-card {
+        max-width: 100%;
+    }
+    .wpmb-card-cover {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+    }
+    .wpmb-card-body {
+        padding: 10px 10px 10px 2px;
+    }
+    .wpmb-card--album .wpmb-card-body {
+        padding: 10px 12px 6px;
+    }
+    .wpmb-card-title {
+        font-size: 0.875rem;
+    }
+}

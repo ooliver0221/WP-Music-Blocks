@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "wp-music-blocks/music-card",
+    "title": "音乐卡片",
+    "category": "embed",
+    "icon": "format-audio",
+    "description": "一个美观的音乐卡片区块，支持 Apple Music、QQ音乐 和 网易云音乐。粘贴链接即可自动获取封面、歌名、艺人、专辑等信息。",
+    "keywords": ["音乐", "歌曲", "专辑", "apple music", "QQ音乐", "网易云", "音乐卡片"],
+    "version": "1.0.0",
+    "textdomain": "wp-music-blocks",
+    "attributes": {
+        "url": {
+            "type": "string",
+            "default": ""
+        },
+        "cardType": {
+            "type": "string",
+            "enum": ["single", "album"],
+            "default": "single"
+        },
+        "musicData": {
+            "type": "object",
+            "default": null
+        },
+        "colors": {
+            "type": "object",
+            "default": null
+        },
+        "selectedPlatform": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"],
+        "spacing": {
+            "margin": true,
+            "padding": true
+        }
+    },
+    "editorScript": "wpmb-block-editor",
+    "editorStyle": "wpmb-block-editor-style",
+    "style": "wpmb-block-style"
+}
