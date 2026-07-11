@@ -5,7 +5,7 @@
  * Description: 一个 Gutenberg 音乐卡片区块，支持 Apple Music、QQ音乐、网易云音乐。粘贴链接即可自动获取专辑封面、歌曲信息和曲目列表。
  * Version: 1.0.0
  * Author: ooliver
- * License: GPL-2.0-or-later
+ * License: MIT
  * Text Domain: wp-music-blocks
  *
  * @package WPMusicBlocks
@@ -152,7 +152,7 @@ function wpmb_render_settings_page() {
             <li><strong>网易云音乐</strong> — 如 <code>https://music.163.com/song?id=...</code></li>
         </ul>
         <p>如果自动识别不准确，可以在区块右侧面板或顶部工具栏中手动选择平台。</p>
-        <p>支持三种卡片类型：<strong>歌曲</strong>、<strong>专辑</strong>（含曲目列表）、<strong>自建歌单</strong>（手动编辑歌曲）。</p>
+        <p>支持两种卡片类型：<strong>歌曲</strong> 和 <strong>专辑</strong>（含曲目列表）。</p>
     </div>
     <?php
 }
